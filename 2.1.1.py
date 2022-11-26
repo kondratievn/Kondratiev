@@ -5,7 +5,7 @@ from openpyxl.styles import Font, Border, Side
 
 
 class Vacancy:
-    currencies = {"AZN": 35.68,
+    currens = {"AZN": 35.68,
                   "BYR": 23.91,
                   "EUR": 59.90,
                   "GEL": 21.74,
@@ -14,14 +14,14 @@ class Vacancy:
                   "RUR": 1,
                   "UAH": 1.64,
                   "USD": 60.66,
-                  "UZS": 0.0055,}
+                  "UZS": 0.0055, }
 
     def __init__(self, vacancy):
         self.name = vacancy['name']
         self.salary_from = int(float(vacancy['salary_from']))
         self.salary_to = int(float(vacancy['salary_to']))
         self.salary_currency = vacancy['salary_currency']
-        self.salary_average = self.currencies[self.salary_currency] * (self.salary_from + self.salary_to) / 2
+        self.salary_average = self.currens[self.salary_currency] * (self.salary_from + self.salary_to) / 2
         self.area_name = vacancy['area_name']
         self.year = int(vacancy['published_at'][:4])
 
